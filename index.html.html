@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroVenus</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        .loading-text {
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        .yellow-border {
+            background-color: yellow;
+            height: 100px; /* Increased height */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Make sure text can be positioned relative to this */
+            margin: 0;
+            padding: 0;
+        }
+
+        .yellow-border img {
+            max-width: 80%; /* Adjust as needed */
+            max-height: 80px; /* Adjust as needed */
+        }
+
+        .text {
+            position: absolute;
+            bottom: 10px; /* Adjust spacing from the bottom */
+            right: 20px; /* Adjust spacing from the right edge */
+            font-size: 1.2em;
+            font-weight: bold;
+            background-color: white; /* Optional: to make text stand out */
+            padding: 5px;
+        }
+
+        .content, .horoscope-page {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .horoscope-page {
+            background-color: #f4f4f4;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div>ASTROVENUS</div>
+        <div class="loading-text">by AMIT SHUKLA</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="yellow-border">
+            <img src="https://th.bing.com/th/id/R.3301986a4884013dde89016198f4fc84?rik=KNWv4tvjObYQBg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fRid%2frnk%2fRidrnkBi9.png&ehk=IIkTKRfINy1nOlLPTosnjI7cBbZJgASI%2fK73HXE8txQ%3d&risl=&pid=ImgRaw&r=0" alt="Astrology Image">
+            <div class="text">by AMIT SHUKLA</div>
+        </div>
+        <button class="daily-horoscope-button" onclick="showHoroscope()">Daily Horoscope</button>
+    </div>
+
+    <!-- Horoscope Page -->
+    <div class="horoscope-page">
+        <div class="yellow-border">
+            <img src="https://th.bing.com/th/id/R.3301986a4884013dde89016198f4fc84?rik=KNWv4tvjObYQBg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fRid%2frnk%2fRidrnkBi9.png&ehk=IIkTKRfINy1nOlLPTosnjI7cBbZJgASI%2fK73HXE8txQ%3d&risl=&pid=ImgRaw&r=0" alt="Astrology Image">
+            <div class="text">by AMIT SHUKLA</div>
+        </div>
+        <h1>Your Daily Horoscope</h1>
+        <p>Today's horoscope brings you wisdom, joy, and clarity. Stay tuned for more personalized insights into your zodiac journey.</p>
+        <button class="back-button" onclick="goBack()">Back to Home</button>
+    </div>
+
+    <script>
+        // Hide loading screen and show main content after 2 seconds
+        setTimeout(function() {
+            document.querySelector('.loading-screen').style.display = 'none';
+            document.querySelector('.content').style.display = 'block';
+        }, 2000);
+
+        // Show Horoscope Page
+        function showHoroscope() {
+            document.querySelector('.content').style.display = 'none';
+            document.querySelector('.horoscope-page').style.display = 'block';
+        }
+
+        // Go back to Main Content
+        function goBack() {
+            document.querySelector('.horoscope-page').style.display = 'none';
+            document.querySelector('.content').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
